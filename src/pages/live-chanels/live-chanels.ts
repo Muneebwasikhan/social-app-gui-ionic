@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App, ViewController } from 'ionic-angular';
 import { VideoListPage } from '../video-list/video-list';
 import { TabsPage } from '../tabs/tabs';
+import { PopoverController } from 'ionic-angular';
+import { PopoverPage } from '../popover/popover';
 
 /**
  * Generated class for the LiveChanelsPage page.
@@ -9,6 +11,8 @@ import { TabsPage } from '../tabs/tabs';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+
+
 
 @IonicPage()
 @Component({
@@ -45,14 +49,19 @@ export class LiveChanelsPage {
     },
   ]
   constructor(public navCtrl: NavController, public navParams: NavParams
-    ,public appCtrl: App) {
+    ,public appCtrl: App,public popoverCtrl: PopoverController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LiveChanelsPage');
 
   }
-
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+    popover.present({
+      ev: myEvent
+    });
+  }
   enableSearch(){
 this.searchEnable = !this.searchEnable;
   }

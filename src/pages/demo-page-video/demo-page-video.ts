@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ProductDetailsPage } from '../product-details/product-details';
+
 /**
- * Generated class for the VideoListPage page.
+ * Generated class for the DemoPageVideoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,12 +10,14 @@ import { ProductDetailsPage } from '../product-details/product-details';
 
 @IonicPage()
 @Component({
-  selector: 'page-video-list',
-  templateUrl: 'video-list.html',
+  selector: 'page-demo-page-video',
+  templateUrl: 'demo-page-video.html',
 })
-export class VideoListPage {
-
+export class DemoPageVideoPage {
+videoUrl={};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.videoUrl = this.navParams.data;
+    console.log(this.videoUrl["videoUrl"]);
   }
 
   ionViewDidLoad() {
@@ -30,11 +32,7 @@ export class VideoListPage {
   }
 
   heart(){
-    console.log("liked");
-}
-product(){
-  console.log("product");
-    this.navCtrl.push(ProductDetailsPage);
+   console.log("liked");
 }
 
 }

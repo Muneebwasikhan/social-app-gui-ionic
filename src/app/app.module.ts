@@ -15,6 +15,10 @@ import { BuildingAppPage } from '../pages/building-app/building-app';
 import { AppInfoPage } from '../pages/app-info/app-info';
 import { LiveChanelsPage } from '../pages/live-chanels/live-chanels';
 import { VideoListPage } from '../pages/video-list/video-list';
+import { PopoverPage } from '../pages/popover/popover';
+import { LiveDemoPage } from '../pages/live-demo/live-demo';
+import { DemoPageVideoPage } from '../pages/demo-page-video/demo-page-video';
+import { ProductDetailsPage } from '../pages/product-details/product-details';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { VideoListPage } from '../pages/video-list/video-list';
     BuildingAppPage,
     AppInfoPage,
     LiveChanelsPage,
-    VideoListPage
+    VideoListPage,
+    PopoverPage,
+    LiveDemoPage,
+    DemoPageVideoPage,
+    ProductDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,11 @@ import { VideoListPage } from '../pages/video-list/video-list';
     BuildingAppPage,
     AppInfoPage,
     LiveChanelsPage,
-    VideoListPage
+    VideoListPage,
+    LiveDemoPage,
+    PopoverPage,
+    DemoPageVideoPage,
+    ProductDetailsPage
   ],
   providers: [
     StatusBar,

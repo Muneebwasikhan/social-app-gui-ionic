@@ -19,6 +19,38 @@ import { PopoverPage } from '../pages/popover/popover';
 import { LiveDemoPage } from '../pages/live-demo/live-demo';
 import { DemoPageVideoPage } from '../pages/demo-page-video/demo-page-video';
 import { ProductDetailsPage } from '../pages/product-details/product-details';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
+import { IndexPage } from '../pages/index';
+import { Camera } from '@ionic-native/camera';
+import { FilePath } from '@ionic-native/file-path';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { DatePipe, CommonModule } from '@angular/common';
+import { AlertProvider } from '../providers/alert/alert';
+import { CameraProvider } from '../providers/camera/camera';
+import { LoadingProvider } from '../providers/loading/loading';
+import { File } from '@ionic-native/file';
+import { createTranslateLoader } from '../providers/translate/translate';
+import { HttpModule, Http } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { IndexPopoverPage } from '../pages/index-popover/index-popover';
+import { SettingsPage } from '../pages/settings/settings';
+import { AddProductPage } from '../pages/add-product/add-product';
+import { ProductsPage } from '../pages/products/products';
+import { OrdersPage } from '../pages/orders/orders';
+import { PaymentsPage } from '../pages/payments/payments';
+import { MyPurchasesPage } from '../pages/my-purchases/my-purchases';
+import { OrderShippingPage } from '../pages/order-shipping/order-shipping';
+import { ProfilePage } from '../pages/profile/profile';
+import { MyVideosPage } from '../pages/my-videos/my-videos';
+import { FollowersPage } from '../pages/followers/followers';
+import { FollowingPage } from '../pages/following/following';
+import { MyStreamHistoryPage } from '../pages/my-stream-history/my-stream-history';
+import { GoLivePage } from '../pages/go-live/go-live';
+import { BroadcasterPage } from '../pages/broadcaster/broadcaster';
+// import { TranslateProvider } from '../providers/translate/translate';
 
 @NgModule({
   declarations: [
@@ -33,13 +65,47 @@ import { ProductDetailsPage } from '../pages/product-details/product-details';
     LiveChanelsPage,
     VideoListPage,
     PopoverPage,
+    IndexPopoverPage,
     LiveDemoPage,
     DemoPageVideoPage,
-    ProductDetailsPage
+    ProductDetailsPage,
+    LoginPage,
+    SignupPage,
+    ForgotPasswordPage,
+    IndexPage,
+    SettingsPage,
+    AddProductPage,
+    ProductsPage,
+    OrdersPage,
+    PaymentsPage,
+    MyPurchasesPage,
+    OrderShippingPage,
+    ProfilePage,
+    MyVideosPage,
+    FollowersPage,
+    FollowingPage,
+    MyStreamHistoryPage,
+    GoLivePage,
+    BroadcasterPage
   ],
   imports: [
+   
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    // IonicStorageModule.forRoot(),
+    HttpModule,
+    HttpClientModule,
+    [CommonModule,],
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [Http]
+      }
+    }),
+
+
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,13 +121,48 @@ import { ProductDetailsPage } from '../pages/product-details/product-details';
     VideoListPage,
     LiveDemoPage,
     PopoverPage,
+    IndexPopoverPage,
     DemoPageVideoPage,
-    ProductDetailsPage
+    ProductDetailsPage,
+    LoginPage,
+    SignupPage,
+    ForgotPasswordPage,
+    IndexPage,
+    SettingsPage,
+    AddProductPage,
+    ProductsPage,
+    OrdersPage,
+    PaymentsPage,
+    MyPurchasesPage,
+    OrderShippingPage,
+    ProfilePage,
+    MyVideosPage,
+    FollowersPage,
+    FollowingPage,
+    MyStreamHistoryPage,
+    GoLivePage,
+    BroadcasterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    //MediaCapture,
+    //Media,
+    File,
+    Camera,
+    FilePath,
+    FileTransfer,
+    //Calendar,
+    DatePipe,
+    //HeaderColor,
+    AlertProvider,
+    LoadingProvider,
+    CameraProvider,
+    AlertProvider,
+    CameraProvider,
+    LoadingProvider
+    // WheelSelector,
   ]
 })
 export class AppModule {}

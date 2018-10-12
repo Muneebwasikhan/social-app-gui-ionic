@@ -1,0 +1,116 @@
+page-signup {
+    .bg-img{
+      // background-color: #787d94;
+      // background-image: url(../../assets/imgs/4-Tripod_iPX_Use-4_1024x1024.jpg) !important;
+      // background-image: url(../../assets/imgs/6-Tripod_iPX_Use-3_1024x1024.jpg) !important;
+      // background-image: url(../../assets/imgs/2-Tripod_iPX_Lifestyle-1_1024x1024.jpg) !important;
+      // background-image: url(../../assets/imgs/live-streaming-990x619.jpg) !important;
+      background-image: url(../../assets/imgs/5b1deb75a31001b8b9bac70d.jpeg) !important;
+      
+        background-position-x: -200px;
+        background-size: cover !important;
+        // background-position: center;
+        background-repeat: repeat;
+  }
+    
+      .socialLogin {
+        float: left;
+        width: 100%;
+        text-align: center;
+      }
+      .facebook{
+        background-color: #3b5998;;
+      }
+      .google{
+        background-color: #d13d35;
+      }
+      .github{
+        background-color: #000000;
+      }
+      .twitter{
+        background-color: #728fdb;
+      }
+      .container-logo {
+        display: inline-block;
+        width: 100%;
+        margin: 20px 0;
+        img {
+          max-width: 250px;
+        }
+      }
+      .main-content {
+        min-height: 100%;
+      }
+      
+      .item-inner{
+        border-bottom: 0px !important;
+      }
+      .list-md, .list-ios {
+        margin:0 !important;
+      }
+      .list {
+        padding:0 !important;
+      }
+      form {
+        .button-md,
+        .button-ios {
+          margin: 0px !important;
+          background-color: black;
+          padding: 26px !important;
+        }
+      }
+      .form-bottom-text {
+        display: inline-block;
+        width: 100%;
+      }
+      .form-bottom-text a{
+          color: #283b91;
+      }
+      .form-bottom-text label,
+      a {
+        color: white;
+      }
+     
+      .errormsg p {
+        background-color: rgba(255,0,0,.3);
+        color: white;
+        border: 1px solid #FF0000;
+        padding: 5px;
+      }
+      .sepretor-or {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+      }
+      .sepretor-or p {
+        color: white  ;
+        font-size: 16px;
+        text-transform: lowercase;
+      }
+      
+    }
+  
+    .forgotPass
+    {
+        color: lightgray;
+    }
+    
+    .homeLogo
+    {
+        width: 50%;
+        margin-top: 9vh;
+    }
+   
+  .iconCol
+  {
+    color: lightgray;
+  }
+  
+  .iconCol ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: lightgray;
+    opacity: 1; /* Firefox */
+  }
+  
+    .toolbar-background {
+      background-color:  transparent;
+    }

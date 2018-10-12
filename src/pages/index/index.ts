@@ -5,24 +5,24 @@ import { TabsPage } from '../tabs/tabs';
 import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { LoginPage } from '../login/login';
+import { IndexPopoverPage } from '../index-popover/index-popover';
+import { GoLivePage } from '../go-live/go-live';
+import { BroadcasterPage } from '../broadcaster/broadcaster';
 
 /**
- * Generated class for the LiveChanelsPage page.
+ * Generated class for the IndexPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
-
-
 @IonicPage()
 @Component({
-  selector: 'page-live-chanels',
-  templateUrl: 'live-chanels.html',
+  selector: 'page-index',
+  templateUrl: 'index.html',
 })
-export class LiveChanelsPage {
+export class IndexPage {
   searchEnable = false;
-  abc = false;
   obj=[
     {
       imgSrc:"https://cdn57.androidauthority.net/wp-content/uploads/2017/04/Samsung-Galaxy-S7-vs-S7-Edge-532-1340x754.jpg",
@@ -59,7 +59,7 @@ export class LiveChanelsPage {
 
   }
   presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverPage);
+    let popover = this.popoverCtrl.create(IndexPopoverPage);
     popover.present({
       ev: myEvent
     });
@@ -78,6 +78,9 @@ this.searchEnable = !this.searchEnable;
 
   login(){
     this.navCtrl.push(LoginPage);
+  }
+  goLive(){
+    this.navCtrl.push(BroadcasterPage);
   }
 
 }

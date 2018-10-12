@@ -1,0 +1,56 @@
+<ion-content class="bg-img">
+
+  <div class="main-content">
+  <div padding text-center class="container-logo">
+  <img class="homeLogo" src="../../assets/imgs/logo4.png">
+  </div>
+  <form #loiginform="ngForm" (ngSubmit)="signin(loiginform)" >
+  <div padding class="container-bottom">
+  
+  
+  <ion-list style="background-color:rgba(0, 0, 0, 0.3);margin-bottom: 10px">
+  <ion-item style="background-color:transparent">
+  <ion-label>
+  <ion-icon ios="ios-mail" md="md-mail" class="iconCol"></ion-icon>
+  </ion-label>
+  <ion-input [(ngModel)]="useremailtxt" name="useremail" type="email" placeholder="Email *" class="iconCol"> </ion-input>
+  </ion-item>
+  </ion-list>
+  <ion-list style="background-color:rgba(0, 0, 0, 0.3);margin-bottom: 10px">
+  <ion-item style="background-color:transparent;margin-top: 10px">
+  <ion-label>
+  <ion-icon ios="ios-unlock" md="md-unlock" class="iconCol"></ion-icon>
+  </ion-label>
+  <ion-input [(ngModel)]="userpasswordtxt" name="userpassword" type="password" placeholder="Password *" class="iconCol"> </ion-input>
+  </ion-item>
+  </ion-list>
+  <button type="submit" name="signin" ion-button full color="themeOrange" block>
+  <b>
+  <ion-icon name="log-in" style="margin-right: 12px;"></ion-icon>SIGN IN</b>
+  </button>
+  <div padding text-center class="form-bottom-text">
+      <a href="javascript:void(0);" class="forgotPass" (click)="openForgetPasswordPage()" > Forgot password?</a>
+      </div>
+      <div padding text-center class="form-bottom-text">
+      <label style="color: white;">Don't have an Account?
+      <a (click)="signup()" class="forgotPass">Sign up</a>
+      </label>
+      </div>
+      </div> 
+      </form> 
+      <div class="sepretor-or">
+      <p style="text-align: center ; color: white">OR USE ANOTHER WAY</p>
+      </div>
+      <div text-center class="socialLogin" padding>
+      <button ion-button full class="google" color="googleRed">
+      <ion-icon style="margin-right: 12px;">
+      <img style="height: 30px" src="../../assets/imgs/googleButton.png " />
+      </ion-icon>Sign in with Google</button>
+      <button ion-button full class="facebook" color="facebookBlue">
+      <ion-icon style="margin-right: 12px;">
+      <img style="height: 30px" src="../../assets/imgs/fbButton.png " />
+      </ion-icon> Sign in with Facebook</button>
+      </div>
+      </div>
+      
+      </ion-content>

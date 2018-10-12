@@ -17,7 +17,7 @@
       <button ion-button icon-only (click)="enableSearch()">
         <ion-icon name="search"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="openModal()">
+      <button ion-button icon-only (click)="login()">
         <ion-icon name="log-in"></ion-icon>
       </button>
       
@@ -44,7 +44,7 @@
     <ion-searchbar *ngIf="searchEnable == true" class="searchBar" color="themeOrange">
       </ion-searchbar>
   <ion-fab bottom right (click)="testingButton()">
-    <button ion-fab color="themeOrange">
+    <button ion-fab color="themeOrange" (click)="login()">
       <ion-icon name="log-in"></ion-icon>
     </button>
   </ion-fab>

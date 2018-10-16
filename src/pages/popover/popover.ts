@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LiveDemoPage } from '../live-demo/live-demo';
+import { LoginPage } from '../login/login';
+import { SignupPage } from '../signup/signup';
 
 /**
  * Generated class for the PopoverPage page.
@@ -25,5 +27,10 @@ export class PopoverPage {
   liveEvents(){
     this.navCtrl.push(LiveDemoPage);
   }
-
+  login(){
+    this.navCtrl.push(LoginPage);
+  }
+  register(){
+    this.navCtrl.push(SignupPage);
+  }
 }

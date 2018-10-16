@@ -32,7 +32,7 @@ this.navCtrl.push(SignupPage);
 
 chkLogin(){
 if(localStorage.getItem("Member") == "yes"){
-this.appCtrl.getRootNav().setRoot(IndexPage);
+  this.navCtrl.setRoot(IndexPage);
 } 
 else{
 // No user is signed in.

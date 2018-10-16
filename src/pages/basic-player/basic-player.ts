@@ -1,19 +1,14 @@
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ProductDetailsPage } from '../product-details/product-details';
 import { Component, ElementRef, NgZone, ViewChild } from '@angular/core';
-
-
-
 
 
 @IonicPage()
 @Component({
-  selector: 'page-video-list',
-  templateUrl: 'video-list.html',
+  selector: 'page-basic-player',
+  templateUrl: 'basic-player.html',
 })
-export class VideoListPage {
-
-  
+export class BasicPlayerPage {
+ 
   // Bind '<div #player>' in template to this.playerEl
   @ViewChild('player') playerEl: ElementRef;
   playerLog = [];
@@ -26,9 +21,9 @@ export class VideoListPage {
     private zone: NgZone
     ) {
   }
+
   ionViewDidEnter() {
     console.log('starting basic player');
-
     // BambuserPlayer is loaded to window in index.html
     const BambuserPlayer:any = window['BambuserPlayer'];
 
@@ -82,7 +77,7 @@ export class VideoListPage {
       'volumechange',
       'waiting'
     ].map(eventName => player.addEventListener(eventName, e => log(eventName)));
-    player.play();
+
     if (this.navParams.get('autoplay')) {
       // Does not work in all circumstances - see notes at
       // https://bambuser.com/docs/playback/web-player/#javascript-api
@@ -95,6 +90,7 @@ export class VideoListPage {
   }
 
   closePlayer() {
+    // Relevant only if player is opened as a modal
     this.navCtrl.pop();
   }
 
@@ -112,18 +108,5 @@ export class VideoListPage {
     this.playerEl.nativeElement.innerHTML = '';
     this.playerLog = [];
   }
-
-  back(){
-    console.log("back");
-    this.navCtrl.pop();
-  }
-
-  heart(){
-    console.log("liked");
-}
-product(){
-  console.log("product");
-    this.navCtrl.push(ProductDetailsPage);
-}
 
 }

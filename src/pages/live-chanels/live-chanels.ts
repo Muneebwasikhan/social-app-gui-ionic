@@ -5,13 +5,8 @@ import { TabsPage } from '../tabs/tabs';
 import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { LoginPage } from '../login/login';
+import { IndexPage } from '../index';
 
-/**
- * Generated class for the LiveChanelsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 
 
@@ -52,11 +47,22 @@ export class LiveChanelsPage {
   ]
   constructor(public navCtrl: NavController, public navParams: NavParams
     ,public appCtrl: App,public popoverCtrl: PopoverController) {
+      
+      this.chkLogin();
   }
-
+  chkLogin(){
+    if(localStorage.getItem("Member") == "yes"){
+      this.navCtrl.setRoot(IndexPage);
+    } 
+    else{
+    // No user is signed in.
+    console.log('login here');
+    }
+    console.log('login');
+    }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LiveChanelsPage');
-
+   
   }
   presentPopover(myEvent) {
     let popover = this.popoverCtrl.create(PopoverPage);
@@ -68,7 +74,33 @@ export class LiveChanelsPage {
 this.searchEnable = !this.searchEnable;
   }
   eventList(){
-    this.navCtrl.push(VideoListPage);
+
+    fetch("https://api.bambuser.com/broadcasts", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, cors, *same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/vnd.bambuser.v1+json",
+        "Authorization": "Bearer cjgfbym5ve0yus3ir9jc829ld"
+      }
+    })
+      .then(response => response.json()).then(res => {
+        console.log(res.results[0]);
+
+        if(res.results[0].type !== "live"){
+           this.navCtrl.push(VideoListPage,
+            {
+              resourceUri: res.results[0].resourceUri,
+              autoplay: true,
+              showCloseButton: false           
+        })
+          //  this.navCtrl.push(VideoListPage);
+        }else{
+          alert("Video is not live");
+        }
+      });
+    // this.navCtrl.push(VideoListPage);
   }
   testingButton(){
     this.appCtrl.getRootNav().setRoot(TabsPage);

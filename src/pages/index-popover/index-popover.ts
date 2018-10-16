@@ -12,6 +12,7 @@ import { MyVideosPage } from '../my-videos/my-videos';
 import { FollowersPage } from '../followers/followers';
 import { FollowingPage } from '../following/following';
 import { MyStreamHistoryPage } from '../my-stream-history/my-stream-history';
+import { GoLivePage } from '../go-live/go-live';
 
 /**
  * Generated class for the IndexPopoverPage page.
@@ -80,5 +81,8 @@ following(){
 }
 myStreamHistory(){
   this.navCtrl.push(MyStreamHistoryPage);
+}
+golive(){
+  this.navCtrl.push(GoLivePage);
 }
 }

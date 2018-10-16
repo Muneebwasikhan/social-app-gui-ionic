@@ -2,12 +2,10 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { OurVisionPage } from '../pages/our-vision/our-vision';
@@ -33,7 +31,6 @@ import { LoadingProvider } from '../providers/loading/loading';
 import { File } from '@ionic-native/file';
 import { createTranslateLoader } from '../providers/translate/translate';
 import { HttpModule, Http } from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { IndexPopoverPage } from '../pages/index-popover/index-popover';
 import { SettingsPage } from '../pages/settings/settings';
@@ -50,7 +47,15 @@ import { FollowingPage } from '../pages/following/following';
 import { MyStreamHistoryPage } from '../pages/my-stream-history/my-stream-history';
 import { GoLivePage } from '../pages/go-live/go-live';
 import { BroadcasterPage } from '../pages/broadcaster/broadcaster';
+import { CartPage } from '../pages/cart/cart';
+import { IonicStorageModule } from '@ionic/storage';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BasicPlayerPage } from '../pages/basic-player/basic-player';
 // import { TranslateProvider } from '../providers/translate/translate';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -86,13 +91,16 @@ import { BroadcasterPage } from '../pages/broadcaster/broadcaster';
     FollowingPage,
     MyStreamHistoryPage,
     GoLivePage,
-    BroadcasterPage
+    BroadcasterPage,
+    CartPage,
+    BasicPlayerPage
   ],
   imports: [
    
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    // IonicStorageModule.forRoot(),
+    IonicStorageModule,
+    IonicStorageModule.forRoot(),
     HttpModule,
     HttpClientModule,
     [CommonModule,],
@@ -141,7 +149,9 @@ import { BroadcasterPage } from '../pages/broadcaster/broadcaster';
     FollowingPage,
     MyStreamHistoryPage,
     GoLivePage,
-    BroadcasterPage
+    BroadcasterPage,
+    CartPage,
+    BasicPlayerPage
   ],
   providers: [
     StatusBar,
@@ -161,7 +171,7 @@ import { BroadcasterPage } from '../pages/broadcaster/broadcaster';
     CameraProvider,
     AlertProvider,
     CameraProvider,
-    LoadingProvider
+    LoadingProvider,
     // WheelSelector,
   ]
 })

@@ -19,14 +19,34 @@
 
 
 <ion-content>
-
+  
+ 
+    
     <!-- <ion-card> -->
-  <div class="bot">
+  <div class="bot" #player>
+      <!-- <div #player> -->
+
+      <!-- <div class="player-container">
+          <div #player></div>
+          
+        </div> -->
+        <!-- <ion-icon class="logo" name="ionitron"></ion-icon> -->
+<!--       
+        <div class="player-log">
+          <div *ngFor="let line of playerLog">{{ line }}</div>
+        </div> -->
+  
       <!-- <img src="../../assets/imgs/fem.jpg"/> -->
-      <video height="100%" src="http://aliinfotech.com/vdeovalet/public/uploads/videos/videoplayback_3.mp4" style="margin-left: -100%;" controls autoplay loop >
+      <!-- <video height="100%" src="http://aliinfotech.com/vdeovalet/public/uploads/videos/videoplayback_3.mp4" style="margin-left: -100%;" controls autoplay loop >
+        </video> -->
         <!-- <video height="100%" src="" style="margin-left: -100%;" controls autoplay loop > -->
         <!-- <source type="video/mp4"> -->
-      </video>
+          <!-- <div *ngIf="resourceUri" style="width: 100%; height: 100%">
+            <iframe
+              style="width: 100%; height: 100%; border: none"
+              [src]="resourceUri"
+              allowfullscreen></iframe>
+          </div> -->
       <!-- <ion-content overflow-scroll="true">
         <video controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">
          <source src="https://r1---sn-npoeen7y.googlevideo.com/videoplayback?ip=54.149.212.149&requiressl=yes&gir=yes&ipbits=0&id=o-AKkgrngiLz_SC_SiDi9_GpsVS1rJRnyL5S3f_l3hxZz3&mime=video%2Fwebm&pl=24&fvip=1&key=cms1&lmt=1513339323858939&itag=43&c=WEB&signature=367DE58A595AF1D9CA9370D25CA9BC64D8B903E5.4AAE9325B904C66A7570A268018F840394CF892A&ratebypass=yes&source=youtube&clen=6350556&sparams=clen,dur,ei,expire,gir,id,ip,ipbits,itag,lmt,mime,mip,mm,mn,ms,mv,pl,ratebypass,requiressl,source&expire=1535986020&ei=BPWMW5yMLtLSkga03JoY&dur=0.000&redirect_counter=1&cm2rm=sn-nx5l67e&fexp=23755740&req_id=ebea1baf4b55a3ee&cms_redirect=yes&mip=103.72.85.254&mm=34&mn=sn-npoeen7y&ms=ltu&mt=1535963866&mv=u" type="video/mp4" />
@@ -290,7 +310,6 @@
       
     </div>
 
-    <div class="hearts"></div>
   </div>
   </div>
   </ion-content>

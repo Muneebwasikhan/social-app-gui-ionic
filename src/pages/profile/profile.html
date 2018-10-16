@@ -1,18 +1,57 @@
-<!--
-  Generated template for the ProfilePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>profile</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
-<ion-content padding>
 
+<ion-content>
+  <div class="sixteenPx"></div>
+ 
+<div class="cont">
+  <div><img src="https://cdn1.iconfinder.com/data/icons/social-messaging-productivity-1-1/128/gender-male2-512.png" class="img" /></div>
+</div>
+<div class="shape" padding="false"></div>
+
+  <ion-card class="cards">
+      
+      <ion-list>
+        <button ion-item (click)="addNewProduct()">
+          <ion-icon name="add-circle" item-start></ion-icon>
+          Add New Product
+        </button>
+    
+        <button ion-item>
+          <ion-icon name="add-circle" item-start></ion-icon>
+          Add New Event
+        </button>
+    
+        <button ion-item (click)="myProducts()">
+          <ion-icon name="apps" item-start></ion-icon>
+          Products
+        </button>
+    
+        <button ion-item  (click)="liveEvents()">
+          <ion-icon name="calendar" item-start></ion-icon>
+          Events
+        </button>
+        <button ion-item (click)="cart()">
+            <ion-icon name="cart" item-start></ion-icon>
+            Cart
+          </button>
+
+          <button ion-item (click)="followers()">
+              <ion-icon name="people" item-start></ion-icon>
+              Followers
+            </button>
+
+            <button ion-item (click)="following()">
+                <ion-icon name="people" item-start></ion-icon>
+                Following
+              </button>
+    
+        <button ion-item (click)="logout()">
+          <ion-icon name="log-out" item-start></ion-icon>
+          Logout
+        </button>
+    
+    
+      </ion-list>
+    </ion-card>
 </ion-content>

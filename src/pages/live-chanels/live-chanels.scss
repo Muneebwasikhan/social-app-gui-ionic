@@ -1,11 +1,12 @@
 page-live-chanels {
     .searchBar{
-        background-color: color($colors, themeOrange);
+        background-color: color($colors, white);
     }
 
     
 
     .card-background-page {
+        background-color: lightgray;
 
         ion-card {
           position: relative;

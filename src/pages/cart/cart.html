@@ -1,0 +1,16 @@
+
+<ion-content padding>
+
+  <ion-list>
+      <ion-item *ngFor="let item of cartList">
+        <ion-thumbnail item-start>
+          <img [src]="item.item.product_image">
+        </ion-thumbnail>
+        <h2>{{item.item.product_image}}</h2>
+        <p>Price : {{item.item.final_price}}RM</p>
+        <p *ngIf="item.quantity > 1">For {{item.quantity}} items it will be {{(item.quantity)*(item.item.final_price)}}</p>
+        <button ion-button clear item-end>{{item.quantity}} Item</button>
+      </ion-item>
+    </ion-list>
+
+</ion-content>

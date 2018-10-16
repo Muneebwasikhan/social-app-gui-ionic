@@ -1,12 +1,12 @@
 page-index {
     .searchBar{
-        background-color: color($colors, themeOrange);
+        background-color: color($colors, white);
     }
 
     
 
     .card-background-page {
-
+        background-color: lightgray;
         ion-card {
           position: relative;
           text-align: center;

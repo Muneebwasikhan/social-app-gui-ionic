@@ -91,7 +91,7 @@ signin(form: NgForm){
   localStorage.setItem('MemberId',LoginDetails['id']); 
   localStorage.setItem('MemberName',LoginDetails['name']); 
   localStorage.setItem('MemberEmail',LoginDetails['email']); 
-  this.appCtrl.getRootNav().setRoot(IndexPage); 
+  this.navCtrl.setRoot(IndexPage);
   }
   else{ 
   this.loading.hide(); 

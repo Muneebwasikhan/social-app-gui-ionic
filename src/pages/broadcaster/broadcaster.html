@@ -1,18 +1,363 @@
-<ion-content padding>
+<ion-content>
 
-    <button ion-button
-      *ngIf="!isBroadcasting"
-      [disabled]="!broadcaster || isPending"
-      (click)="start()">
-      Start
-    </button>
+   
+
+
+
+  <div style="background-color: transparent;width: 100vw;position: absolute;z-index: 3;">
+    <p style="font-size: 35px;color: white; margin: 10px 20px 20px 90vw;" (click)="back()">
+      <ion-icon name="close"></ion-icon>
+      
+    </p>
+  </div>
+
+  <div class="upe">
+      <div class="camera">
+          
+      
+        <button
+          *ngIf="isBroadcasting"
+          [disabled]="isPending"
+          (click)="stop()"
+          >
+          <p style="color: red"><ion-icon name="radio-button-on"></ion-icon></p>
+        </button>
+        <button
+          *ngIf="!isBroadcasting"
+          [disabled]="!broadcaster || isPending"
+          (click)="start()">
+         <p><ion-icon name="videocam"></ion-icon></p> 
+        </button>
+        <button
+        (click)="switchCamera()"
+        >
+        <p><ion-icon name="reverse-camera"></ion-icon></p>
+        </button>
+        <button
+        *ngIf="!showEye"
+        (click)="eye()"
+        >
+        <p><ion-icon name="eye"></ion-icon></p>
+        </button>
+        <button
+        *ngIf="showEye"
+        (click)="eye()"
+        >
+        <p><ion-icon name="eye-off"></ion-icon></p>
+        </button>
+  </div>
+      <div class="upe2" *ngIf="showEye">
+    
+    
+      <div class="Comments">
+        <div class="comPart">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2 class="dpImg">
+                <img src="../../assets/imgs/krisWu.jpg" />
+              </ion-col>
+              <ion-col col-10>
+                <div class="uName"><b>Kris Wu</b></div>
+                <div class="comn">ssds</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+        <div class="comPart">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2 class="dpImg">
+                <img src="../../assets/imgs/CarmenSoo.jpg" />
+              </ion-col>
+              <ion-col col-10>
+                <div class="uName"><b>Carmen Soo</b></div>
+                <div class="comn">di mana kamu ??? </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+
+        <div class="comPart">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2 class="dpImg">
+                <img src="../../assets/imgs/AfiqMuiz.jpg" />
+              </ion-col>
+              <ion-col col-10>
+                <div class="uName"><b>Afiq Muiz</b></div>
+                <div class="comn">tempat yang bagus
+                  <img src="../../assets/imgs/heart-love-like-feeling-attract-valentine-33dcf6cad4cf90d1-512x512.png " />
+                  <img src="../../assets/imgs/heart-love-like-feeling-attract-valentine-33dcf6cad4cf90d1-512x512.png " />
+
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+
+
+        <div class="comPart">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2 class="dpImg">
+                <img src="../../assets/imgs/krisWu.jpg" />
+              </ion-col>
+              <ion-col col-10>
+                <div class="uName"><b>Kris Wu</b></div>
+                <div class="comn">Whats new today?</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+        <div class="comPart">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2 class="dpImg">
+                <img src="../../assets/imgs/CarmenSoo.jpg" />
+              </ion-col>
+              <ion-col col-10>
+                <div class="uName"><b>Carmen Soo</b></div>
+                <div class="comn">di mana kamu ??? </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+
+        <div class="comPart">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2 class="dpImg">
+                <img src="../../assets/imgs/AfiqMuiz.jpg" />
+              </ion-col>
+              <ion-col col-10>
+                <div class="uName"><b>Afiq Muiz</b></div>
+                <div class="comn">tempat yang bagus
+                  <img src="../../assets/imgs/heart-love-like-feeling-attract-valentine-33dcf6cad4cf90d1-512x512.png " />
+                  <img src="../../assets/imgs/heart-love-like-feeling-attract-valentine-33dcf6cad4cf90d1-512x512.png " />
+
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+
+
+        <div class="comPart">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2 class="dpImg">
+                <img src="../../assets/imgs/krisWu.jpg" />
+              </ion-col>
+              <ion-col col-10>
+                <div class="uName"><b>Kris Wu</b></div>
+                <div class="comn">Whats new today?</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+        <div class="comPart">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2 class="dpImg">
+                <img src="../../assets/imgs/CarmenSoo.jpg" />
+              </ion-col>
+              <ion-col col-10>
+                <div class="uName"><b>Carmen Soo</b></div>
+                <div class="comn">di mana kamu ??? </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+
+        <div class="comPart">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-2 class="dpImg">
+                <img src="../../assets/imgs/AfiqMuiz.jpg" />
+              </ion-col>
+              <ion-col col-10>
+                <div class="uName"><b>Afiq Muiz</b></div>
+                <div class="comn">tempat yang bagus
+                  <img src="../../assets/imgs/heart-love-like-feeling-attract-valentine-33dcf6cad4cf90d1-512x512.png " />
+                  <img src="../../assets/imgs/heart-love-like-feeling-attract-valentine-33dcf6cad4cf90d1-512x512.png " />
+
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+
+
+      </div>
+      <ion-grid *ngIf="logedin" style="width:100vw;text-align: center;">
+        <ion-row>
+          <ion-col col-8 style="text-align: left;">
+            <span><input type="text" style="width: 100%;" [(ngModel)]="commint" class="search rounded" placeholder="What do you think?"></span>
+          </ion-col>
+          <ion-col col-2 (click)="heart()">
+            <ion-icon class="rounded search pad" name='heart' style="color: red"></ion-icon>
+          </ion-col>
+          <ion-col col-2 style="text-align: left ;">
+            <ion-icon class="rounded search pad">
+              <img style="max-height: 20px" (click)="send()" src="../../assets/imgs/download.svg" />
+            </ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngIf="!logedin" style="width:100vw;text-align: center;" (click)="login()">
+        <ion-row>
+          <ion-col col-8 style="text-align: left;">
+            <span><input type="text" disabled style="width: 100%;" [(ngModel)]="commint" class="search rounded"
+                placeholder="Signin first for joining chat"></span>
+          </ion-col>
+          <ion-col col-2>
+            <ion-icon class="rounded search pad" name='heart' style="color: red"></ion-icon>
+          </ion-col>
+          <ion-col col-2 style="text-align: left ;">
+            <ion-icon class="rounded search pad">
+              <img style="max-height: 20px" src="../../assets/imgs/download.svg" />
+            </ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+      <div class="scrolling-wrapper">
+        <div class="card" (click)="product()">
+          <div>
+            <div class="scrImg"><img src="../../assets/imgs/mob1.jpg " /></div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+          </div>
+        </div>
+
+        <div class="card" (click)="product()">
+          <div>
+            <div class="scrImg"><img src="../../assets/imgs/mob2.jpg " /></div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+          </div>
+        </div>
+
+        <div class="card" (click)="product()">
+          <div>
+            <div class="scrImg"><img src="../../assets/imgs/mob3.jpg " /></div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+          </div>
+        </div>
+
+        <div class="card" (click)="product()">
+          <div>
+            <div class="scrImg"><img src="../../assets/imgs/mob1.jpg " /></div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+          </div>
+        </div>
+
+        <div class="card" (click)="product()">
+          <div>
+            <div class="scrImg"><img src="../../assets/imgs/mob2.jpg " /></div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+          </div>
+        </div>
+
+        <div class="card" (click)="product()">
+          <div>
+            <div class="scrImg"><img src="../../assets/imgs/mob2.jpg " /></div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+          </div>
+        </div>
+
+        <div class="card" (click)="product()">
+          <div>
+            <div class="scrImg"><img src="../../assets/imgs/mob2.jpg " /></div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+          </div>
+        </div>
+
+        <div class="card" (click)="product()">
+          <div>
+            <div class="scrImg"><img src="../../assets/imgs/mob3.jpg " /></div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+          </div>
+        </div>
+
+        <div class="card" (click)="product()">
+          <div>
+            <div class="scrImg"><img src="../../assets/imgs/mob1.jpg " /></div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+          </div>
+        </div>
+
+        <div class="card" (click)="product()">
+          <div>
+            <div class="scrImg"><img src="../../assets/imgs/mob2.jpg " /></div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+<div *ngIf="disp" class="bg-modal">
+    <div class="modal-contents">
+  <div (click)="closeModal()" class="close">+</div>
+  <ion-slides>
+      
+      <ion-slide>
+          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
+      </ion-slide>
+      <ion-slide>
+          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
+      </ion-slide>
+      <ion-slide>
+          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
+      </ion-slide>
+      <ion-slide>
+          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
+      </ion-slide>
+    </ion-slides>
+    <!-- <img src="{{ProductDescription.OptionImage1}}"> -->
+    <ion-fab left top>
+      <button ion-fab>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-fab>
   
-    <button ion-button
-      *ngIf="isBroadcasting"
-      [disabled]="isPending"
-      (click)="stop()"
-      color="danger">
-      Stop
-    </button>
+    <ion-item>
+      <h1>Nike Shoes</h1>
+      <p>Best shoes ever</p>
+      <h2>5000 RM</h2>
+      
+    </ion-item>
+    <p>best nike shoes ever Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+    <button ion-button full (click)="addCart()" color="newOrange">ADD ITEM TO CART</button>
+
   
+    </div>
+  </div>
+
+  <div *ngIf="disp2" class="bg-modal2">
+      <div class="modal-contents2">
+    <div (click)="closeModal2()" class="close2">+</div>
+    <div padding text-center class="loginLogo">
+        <img class="homeLogo" src="../../assets/imgs/logo4.png">
+        </div>
+        <button ion-button full round color="themeBlue" (click)="loginButton()">LOGIN</button>
+        <button ion-button full round color="themeOrange" (click)="registerButton()">SIGNUP</button>
+    
+      </div>
+    </div>
+
+
   </ion-content>

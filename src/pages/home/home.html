@@ -10,4 +10,14 @@
     update any existing page or create new pages.
   </p>
   <button ion-button color="primary" (click)="about()">About</button>
+  <button ion-button color="primary" (click)="modal()">modal</button>
+<button ion-button color="primary" (click)="sendNotification()">Send Notification</button>
+<div *ngIf="disp" class="bg-modal">
+    <div class="modal-contents">
+  <div (click)="closeModal()" class="close">+</div>
+      
+  
+    </div>
+  </div>
+
 </ion-content>

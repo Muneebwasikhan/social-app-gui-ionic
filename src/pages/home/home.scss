@@ -1,3 +1,41 @@
 page-home {
-
+    
+    // MODAL STARTS HERE //
+    
+    .bg-modal {
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal-contents {
+        height: 90%;
+        width: 90%;
+        background-color: white;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        border-radius: 4px;
+    }
+    
+    
+    .close {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 42px;
+        color: #333;
+        transform: rotate(45deg);
+        cursor: pointer;
+        &:hover {
+            color: #666;
+        }
+    }
+    
 }

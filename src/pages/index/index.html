@@ -119,5 +119,77 @@
     </div>
   </ion-card>
   
+  <ion-card *ngFor="let val of obj2;let i = index" style="width: 100vw;margin-left: -0px;">
+      <img [src]="val.imgSrc" />
+      <!-- <img src="https://i.pinimg.com/originals/c6/a2/89/c6a289648d689ebf779f5c11b2699ab5.jpg"/> -->
+      <div class="halfBlack"></div>
+      <div class="cont">
+        <div class="main">
+          <div class="main1">
+            <button class="live-btn" style="width:100px">RECORDED</button>
+  
+          </div>
+          <div class="main2" (click)="eventList2(i)">
+            <div class="main2d">
+              <div class="main2d1">
+                <p class="main2p">
+                  {{val.disc}}
+                </p>
+              </div>
+              <div class="main2d2"><svg aria-hidden="true" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16 heart"
+                  role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="main3">
+            <p class="main3left">
+              {{val.name}}
+            </p>
+            <div class="stars">
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
+                xml:space="preserve">
+                <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
+                     10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
+  
+              </svg>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
+                xml:space="preserve">
+                <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
+                     10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
+  
+              </svg>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
+                xml:space="preserve">
+                <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
+                     10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
+  
+              </svg>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
+                xml:space="preserve">
+                <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
+                     10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
+  
+              </svg>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
+                xml:space="preserve">
+                <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
+                     10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
+  
+              </svg>
+  
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </ion-card>
+
 
 </ion-content>

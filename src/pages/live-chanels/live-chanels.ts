@@ -6,6 +6,7 @@ import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { LoginPage } from '../login/login';
 import { IndexPage } from '../index';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 
 
@@ -24,6 +25,9 @@ export class LiveChanelsPage {
       disc: "Samsung S7 edge..",
       name: "Muneeb Wasi Khan"
     },
+  ]
+  obj2=[
+    
     {
       imgSrc:"https://wallpapercave.com/wp/asmu9o0.jpg",
       disc: "Shoe Channel",
@@ -45,8 +49,12 @@ export class LiveChanelsPage {
       name: "Aqib Khan"
     },
   ]
+  
+  
+  
   constructor(public navCtrl: NavController, public navParams: NavParams
-    ,public appCtrl: App,public popoverCtrl: PopoverController) {
+    ,public appCtrl: App,public popoverCtrl: PopoverController,
+    public loading:LoadingProvider) {
       
       this.chkLogin();
   }
@@ -74,6 +82,7 @@ export class LiveChanelsPage {
 this.searchEnable = !this.searchEnable;
   }
   eventList(){
+    this.loading.show('Loading...');
 
     fetch("https://api.bambuser.com/broadcasts", {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
@@ -88,16 +97,54 @@ this.searchEnable = !this.searchEnable;
       .then(response => response.json()).then(res => {
         console.log(res.results[0]);
 
-        if(res.results[0].type !== "live"){
+        if(res.results[0].type == "live"){
+          this.loading.hide(); 
            this.navCtrl.push(VideoListPage,
             {
               resourceUri: res.results[0].resourceUri,
               autoplay: true,
-              showCloseButton: false           
+              showCloseButton: true,
         })
           //  this.navCtrl.push(VideoListPage);
         }else{
-          alert("Video is not live");
+          this.loading.hide(); 
+          // alert("Video is not live");
+          this.loading.presentToast('User is not Live',1500,'top','failedToast'); 
+        }
+      });
+    // this.navCtrl.push(VideoListPage);
+  }
+
+  eventList2(resp){
+    this.loading.show('Loading...');
+console.log((resp*1)+1);
+    fetch("https://api.bambuser.com/broadcasts", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, cors, *same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/vnd.bambuser.v1+json",
+        "Authorization": "Bearer cjgfbym5ve0yus3ir9jc829ld"
+      }
+    })
+      .then(response => response.json()).then(res => {
+        this.loading.hide();
+        console.log(res.results[(resp*1)+1]);
+
+        if(res.results[(resp*1)+1].type !== "live"){
+           this.navCtrl.push(VideoListPage,
+            {
+              resourceUri: res.results[(resp*1)+1].resourceUri,
+              autoplay: true,
+              showCloseButton: true,
+        })
+          //  this.navCtrl.push(VideoListPage);
+        }else{
+          this.loading.hide();
+          // alert("Video is not live");
+          this.loading.presentToast('User is not Live',1500,'top','failedToast'); 
+          return false;
         }
       });
     // this.navCtrl.push(VideoListPage);

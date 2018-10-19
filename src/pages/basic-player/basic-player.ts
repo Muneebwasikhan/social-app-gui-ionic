@@ -53,6 +53,7 @@ export class BasicPlayerPage {
       // https://angular.io/docs/ts/latest/api/core/index/NgZone-class.html
       this.zone.run(() => {
         this.playerLog.unshift(`${player.currentTime} ${player.duration} ${str}`);
+        console.log(this.playerLog);
       });
     }
 
@@ -81,7 +82,13 @@ export class BasicPlayerPage {
     if (this.navParams.get('autoplay')) {
       // Does not work in all circumstances - see notes at
       // https://bambuser.com/docs/playback/web-player/#javascript-api
-      player.play();
+      // player.play();
+
+      // setTimeout(function(){  
+        player.play();
+      //   document.getElementsByTagName("IFRAME")[0].setAttribute("allow", "autoplay");
+      //   console.log("chla");
+      // }, 3000);
     }
 
     if (this.navParams.get('showCloseButton')) {

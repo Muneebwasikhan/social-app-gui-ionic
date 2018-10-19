@@ -10,7 +10,7 @@
     <ion-title>
       <!-- VDEOVALET -->
       <!-- tabs page -->
-      <img src="./../../assets/imgs/logo3.png" style="height: 30px;"/>
+      <img src="./../../assets/imgs/logo3.png" style="height: 30px;" />
     </ion-title>
 
     <ion-buttons end color="themeOrange">
@@ -20,30 +20,21 @@
       <!-- <button ion-button icon-only (click)="login()">
         <ion-icon name="log-in"></ion-icon>
       </button> -->
-      
+
       <button ion-button icon-only (click)="presentPopover($event)">
-          <ion-icon name="more"></ion-icon>
-        </button>
-        
-      
+        <ion-icon name="more"></ion-icon>
+      </button>
+
+
     </ion-buttons>
-
-
-    
-
-
   </ion-navbar>
-  
 
 </ion-header>
-
-
-
 <ion-content class="card-background-page">
-  
-    <ion-searchbar *ngIf="searchEnable == true" class="searchBar" color="white">
-      </ion-searchbar>
-  <ion-fab bottom right (click)="testingButton()">
+
+  <ion-searchbar *ngIf="searchEnable == true" class="searchBar" color="white">
+  </ion-searchbar>
+  <ion-fab bottom right (click)="login()">
     <button ion-fab color="white" (click)="login()">
       <ion-icon name="log-in"></ion-icon>
     </button>
@@ -77,7 +68,7 @@
         </div>
         <div class="main3">
           <p class="main3left">
-              {{val.name}}
+            {{val.name}}
           </p>
           <div class="stars">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -122,22 +113,22 @@
       </div>
     </div>
   </ion-card>
+
+  <ion-card *ngFor="let val of obj2;let i = index" style="width: 100vw;margin-left: -0px;">
+      <img [src]="val.imgSrc" />
+      <!-- <img src="https://i.pinimg.com/originals/c6/a2/89/c6a289648d689ebf779f5c11b2699ab5.jpg"/> -->
+      <div class="halfBlack"></div>
+      <div class="cont">
+        <div class="main">
+          <div class="main1">
+            <button class="live-btn" style="width:100px">RECORDED</button>
   
-<!-- 
-  <ion-card style="width: 100vw;margin-left: -0px;">
-    <img src="https://wallpapercave.com/wp/asmu9o0.jpg" />
-    <div class="halfBlack"></div>
-    <div class="cont">
-      <div class="main">
-        <div class="main1">
-          <button class="live-btn">LIVE</button>
-         
-        </div>
-        <div class="main2" (click)="eventList()">
+          </div>
+          <div class="main2" (click)="eventList2(i)">
             <div class="main2d">
               <div class="main2d1">
                 <p class="main2p">
-                  Shoe Channel
+                  {{val.disc}}
                 </p>
               </div>
               <div class="main2d2"><svg aria-hidden="true" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16 heart"
@@ -147,267 +138,52 @@
               </div>
             </div>
           </div>
-        <div class="main3">
-          <p class="main3left">
-            Salman Khan
-          </p>
-          <div class="stars">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
+          <div class="main3">
+            <p class="main3left">
+              {{val.name}}
+            </p>
+            <div class="stars">
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
+                xml:space="preserve">
+                <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
                      10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
+  
+              </svg>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
+                xml:space="preserve">
+                <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
                      10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
+  
+              </svg>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
+                xml:space="preserve">
+                <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
                      10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
+  
+              </svg>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
+                xml:space="preserve">
+                <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
                      10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
+  
+              </svg>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
+                xml:space="preserve">
+                <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
                      10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </ion-card>
-
-  <ion-card style="width: 100vw;margin-left: -0px;">
-    <img src="http://wallpaperstop.net/wp-content/uploads/2018/02/Black%20Clothes%20Wallpaper%20good.jpg" />
-    <div class="halfBlack"></div>
-    <div class="cont">
-      <div class="main">
-        <div class="main1">
-          <button class="live-btn">LIVE</button>
-          
-        </div>
-        <div class="main2" (click)="eventList()">
-            <div class="main2d">
-              <div class="main2d1">
-                <p class="main2p">
-                  The Clothes Mart
-                </p>
-              </div>
-              <div class="main2d2"><svg aria-hidden="true" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16 heart"
-                  role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
-                </svg>
-              </div>
+  
+              </svg>
+  
             </div>
+  
           </div>
-        <div class="main3">
-          <p class="main3left">
-            Areeb Khan
-          </p>
-          <div class="stars">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                       10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                       10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                       10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                       10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                       10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-
-          </div>
-
         </div>
       </div>
-    </div>
-  </ion-card>
-
-  <ion-card style="width: 100vw;margin-left: -0px;">
-    <img src="https://d2giyh01gjb6fi.cloudfront.net/default/0001/55/thumb_54223_default_big.jpeg" />
-   <div class="halfBlack"></div>
-    <div class="cont">
-      <div class="main">
-        <div class="main1">
-          <button class="live-btn">LIVE</button>
-         
-        </div>
-        <div class="main2" (click)="eventList()">
-            <div class="main2d">
-              <div class="main2d1">
-                <p class="main2p">
-                  Samsung Smartphones Over World...
-                </p>
-              </div>
-              <div class="main2d2"><svg aria-hidden="true" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16 heart"
-                  role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        <div class="main3">
-          <p class="main3left">
-            Areeb Khan
-          </p>
-          <div class="stars">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                         10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                         10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                         10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                         10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                         10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </ion-card>
-
-  <ion-card style="width: 100vw;margin-left: -0px;">
-    <img src="https://images7.alphacoders.com/320/320434.jpg" />
-    <div class="halfBlack"></div>
-    <div class="cont">
-      <div class="main">
-        <div class="main1">
-          <button class="live-btn">LIVE</button>
-         
-        </div>
-        <div class="main2" (click)="eventList()">
-            <div class="main2d">
-              <div class="main2d1">
-                <p class="main2p">
-                  Vaio Laptop biggest Mart..
-                </p>
-              </div>
-              <div class="main2d2"><svg aria-hidden="true" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16 heart"
-                  role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        <div class="main3">
-          <p class="main3left">
-            Areeb Khan
-          </p>
-          <div class="stars">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                           10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                           10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polYellow" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                           10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                           10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px" y="0px" viewBox="0 0 53.867 53.867" style="enable-background:new 0 0 53.867 53.867" class="star"
-              xml:space="preserve">
-              <polygon class="polWhite" points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-                           10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 " />
-
-            </svg>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </ion-card> -->
-
-
+    </ion-card>
 
 </ion-content>

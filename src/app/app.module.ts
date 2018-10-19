@@ -51,6 +51,8 @@ import { CartPage } from '../pages/cart/cart';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BasicPlayerPage } from '../pages/basic-player/basic-player';
+import { LoginModalPage } from '../pages/login-modal/login-modal';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 // import { TranslateProvider } from '../providers/translate/translate';
 
 
@@ -93,7 +95,8 @@ import { BasicPlayerPage } from '../pages/basic-player/basic-player';
     GoLivePage,
     BroadcasterPage,
     CartPage,
-    BasicPlayerPage
+    BasicPlayerPage,
+    LoginModalPage
   ],
   imports: [
    
@@ -151,7 +154,8 @@ import { BasicPlayerPage } from '../pages/basic-player/basic-player';
     GoLivePage,
     BroadcasterPage,
     CartPage,
-    BasicPlayerPage
+    BasicPlayerPage,
+    LoginModalPage
   ],
   providers: [
     StatusBar,
@@ -163,6 +167,7 @@ import { BasicPlayerPage } from '../pages/basic-player/basic-player';
     Camera,
     FilePath,
     FileTransfer,
+    LocalNotifications,
     //Calendar,
     DatePipe,
     //HeaderColor,

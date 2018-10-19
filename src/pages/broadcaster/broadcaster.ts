@@ -20,7 +20,8 @@ export class BroadcasterPage {
   isPending = false;
   broadcaster: any;
   errListenerId = false;
-
+  showEye = true;
+  logedin: boolean = false;
   constructor(
     private toastCtrl: ToastController,
     public platform: Platform,
@@ -36,6 +37,17 @@ export class BroadcasterPage {
         // Cordova plugin not installed or running in a web browser
       }
     });
+  }
+  chkLogin(){
+    if(localStorage.getItem("Member") == "yes"){
+      this.logedin = true;
+      }
+    }
+  eye(){
+    this.showEye = !this.showEye;
+  }
+  ionViewDidLoad(){
+    this.chkLogin();
   }
 
   async ionViewDidEnter() {
@@ -115,7 +127,24 @@ export class BroadcasterPage {
       console.log(e);
     }
   }
+  switchCamera(){
+   
+    this.broadcaster.switchCamera();
+  }
+  back(){
+    console.log('Removing viewfinder');
+    if (this.broadcaster) {
+      this.broadcaster.hideViewfinder();
+    }
+    if(this.isBroadcasting){
+      this.stop();
+    }
+    document.getElementsByTagName('body')[0].classList.remove("show-viewfinder");
 
+    
+    console.log("back");
+    this.navCtrl.pop();
+  }
   listenForError() {
     if (this.errListenerId) return;
     this.errListenerId = this.broadcaster.addEventListener('connectionError', status => {

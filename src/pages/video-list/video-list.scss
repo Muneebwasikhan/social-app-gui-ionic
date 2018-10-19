@@ -1,6 +1,108 @@
 
     page-video-list {
 
+      .homeLogo {
+        width: 50%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+      ion-slides {
+        height: 50% !important;
+     }
+
+
+    // MODAL STARTS HERE //
+    
+    .bg-modal {
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+  }
+  
+  .modal-contents {
+      height: 90%;
+      width: 90%;
+      background-color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      border-radius: 10px;
+      overflow: scroll;
+  }
+  
+  
+  .close {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 42px;
+      color: #333;
+      transform: rotate(45deg);
+      cursor: pointer;
+      &:hover {
+          color: #666;
+      }
+  }
+  //model box complete
+
+    // MODAL 2 of login STARTS HERE //
+    
+    .bg-modal2 {
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+  }
+  
+  .modal-contents2 {
+    height: 50%;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+    bottom: 0;
+    max-height: 300px;
+  }
+  
+  
+  .close2 {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: 42px;
+      color: #333;
+      transform: rotate(45deg);
+      cursor: pointer;
+      &:hover {
+          color: #666;
+      }
+  }
+  //model box complete
+
+
+
+
+      ion-page.modal
+       { padding: 30px; background: rgba(0,0,0,0.5); }
+        .disabledfeature
+        { color: #8f8f8f; }
       .logo {
         position: absolute;
         top: 0.5em;

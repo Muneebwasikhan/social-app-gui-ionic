@@ -13,6 +13,7 @@ import { FollowersPage } from '../followers/followers';
 import { FollowingPage } from '../following/following';
 import { MyStreamHistoryPage } from '../my-stream-history/my-stream-history';
 import { GoLivePage } from '../go-live/go-live';
+import { LiveChanelsPage } from '../live-chanels/live-chanels';
 
 /**
  * Generated class for the IndexPopoverPage page.
@@ -48,7 +49,11 @@ export class IndexPopoverPage {
   Settings(){
     this.navCtrl.push(SettingsPage);
   }
-
+  logout(){
+    localStorage.clear();
+    this.navCtrl.setRoot(LiveChanelsPage);
+    // this.navCtrl.push(LiveChanelsPage);
+  }
 addProduct(){
   this.navCtrl.push(AddProductPage);
 }

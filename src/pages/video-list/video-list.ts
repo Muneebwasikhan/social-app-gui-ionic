@@ -1,7 +1,9 @@
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { ProductDetailsPage } from '../product-details/product-details';
 import { Component, ElementRef, NgZone, ViewChild } from '@angular/core';
-
+import { LoginModalPage } from '../login-modal/login-modal';
+import { LoginPage } from '../login/login';
+import { SignupPage } from '../signup/signup';
 
 
 
@@ -18,15 +20,55 @@ export class VideoListPage {
   @ViewChild('player') playerEl: ElementRef;
   playerLog = [];
   showCloseButton = false;
+  logedin: boolean = false;
+  disp: boolean = false;
+  disp2: boolean = false;
 
   constructor(
     private element: ElementRef,
     public navCtrl: NavController,
     private navParams: NavParams,
-    private zone: NgZone
+    private zone: NgZone,
+    public modalCtrl: ModalController
     ) {
+      this.chkLogin();
   }
+  loginButton(){
+    this.navCtrl.push(LoginPage);
+  }
+  registerButton(){
+    this.navCtrl.push(SignupPage);
+  }
+
+  modal(){
+    this.disp = true;
+  }
+  closeModal(){
+    this.disp = false;
+  }
+  modal2(){
+    this.disp2 = true;
+  }
+  closeModal2(){
+    this.disp2 = false;
+  }
+  
+  login(){
+    console.log("login required");
+    // this.presentProfileModal();
+    this.modal2();
+  }
+  presentProfileModal() {
+    let profileModal = this.modalCtrl.create(LoginModalPage);
+    profileModal.present();
+  }
+  chkLogin(){
+    if(localStorage.getItem("Member") == "yes"){
+      this.logedin = true;
+      }
+    }
   ionViewDidEnter() {
+    
     console.log('starting basic player');
 
     // BambuserPlayer is loaded to window in index.html
@@ -51,7 +93,8 @@ export class VideoListPage {
     // https://bambuser.com/docs/playback/web-player/#javascript-api
     const player = BambuserPlayer.create(this.playerEl.nativeElement, resourceUri);
     player.controls = true;
-
+    // console.log(this.playerEl.document.getElementsByTagName("iframe")[0]);
+    console.log(this.playerEl);
     const log = str => {
       // Ensure template is re-rendered even though caller might be an
       // event listener on an emitter outside of Angular's zone.
@@ -82,17 +125,19 @@ export class VideoListPage {
       'volumechange',
       'waiting'
     ].map(eventName => player.addEventListener(eventName, e => log(eventName)));
-    player.play();
+    // player.play();
     if (this.navParams.get('autoplay')) {
-      // Does not work in all circumstances - see notes at
-      // https://bambuser.com/docs/playback/web-player/#javascript-api
-      player.play();
+      
+        player.play();
+        
     }
 
     if (this.navParams.get('showCloseButton')) {
       this.showCloseButton = true;
     }
   }
+  
+
 
   closePlayer() {
     this.navCtrl.pop();
@@ -123,7 +168,8 @@ export class VideoListPage {
 }
 product(){
   console.log("product");
-    this.navCtrl.push(ProductDetailsPage);
+    // this.navCtrl.push(ProductDetailsPage);
+    this.modal();
 }
 
 }

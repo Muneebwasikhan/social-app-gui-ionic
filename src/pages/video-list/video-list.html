@@ -271,55 +271,57 @@
 
 
 
-<div *ngIf="disp" class="bg-modal">
+  <div *ngIf="disp" class="bg-modal">
     <div class="modal-contents">
-  <div (click)="closeModal()" class="close">+</div>
-  <ion-slides>
-      
-      <ion-slide>
-          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
-      </ion-slide>
-      <ion-slide>
-          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
-      </ion-slide>
-      <ion-slide>
-          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
-      </ion-slide>
-      <ion-slide>
-          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
-      </ion-slide>
-    </ion-slides>
-    <!-- <img src="{{ProductDescription.OptionImage1}}"> -->
-    <ion-fab left top>
-      <button ion-fab>
-        <ion-icon name="cart"></ion-icon>
-      </button>
-    </ion-fab>
-  
-    <ion-item>
-      <h1>Nike Shoes</h1>
-      <p>Best shoes ever</p>
-      <h2>5000 RM</h2>
-      
-    </ion-item>
-    <p>best nike shoes ever Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-    <button ion-button full (click)="addCart()" color="newOrange">ADD ITEM TO CART</button>
+      <div (click)="closeModal()" class="close">+</div>
+      <ion-slides>
 
-  
+        <ion-slide>
+          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
+        </ion-slide>
+        <ion-slide>
+          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
+        </ion-slide>
+        <ion-slide>
+          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
+        </ion-slide>
+        <ion-slide>
+          <img src="https://www.phoneworld.com.pk/wp-content/uploads/2017/08/Mobile-Phone-Import-Witnesses-an-Increase-of-48-Percent-in-July-640x400.jpg">
+        </ion-slide>
+      </ion-slides>
+      <ion-fab left top>
+        <button ion-fab>
+          <ion-icon name="cart"></ion-icon>
+        </button>
+      </ion-fab>
+
+      <ion-item>
+        <h1>Nike Shoes</h1>
+        <p>Best shoes ever</p>
+        <h2>5000 RM</h2>
+
+      </ion-item>
+      <p>best nike shoes ever Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+        has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged.</p>
+      <button ion-button full (click)="addCart()" color="newOrange">ADD ITEM TO CART</button>
+
+
     </div>
   </div>
 
   <div *ngIf="disp2" class="bg-modal2">
-      <div class="modal-contents2">
-    <div (click)="closeModal2()" class="close2">+</div>
-    <div padding text-center class="loginLogo">
+    <div class="modal-contents2">
+      <div (click)="closeModal2()" class="close2">+</div>
+      <div padding text-center class="loginLogo">
         <img class="homeLogo" src="../../assets/imgs/logo4.png">
-        </div>
-        <button ion-button full round color="themeBlue" (click)="loginButton()">LOGIN</button>
-        <button ion-button full round color="themeOrange" (click)="registerButton()">SIGNUP</button>
-    
       </div>
+      <button ion-button full round color="themeBlue" (click)="loginButton()">LOGIN</button>
+      <button ion-button full round color="themeOrange" (click)="registerButton()">SIGNUP</button>
+
     </div>
+  </div>
 
 
 </ion-content>

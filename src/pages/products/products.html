@@ -1,18 +1,51 @@
-<!--
-  Generated template for the ProductsPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>products</ion-title>
+  <ion-navbar color="newOrange">
+    <ion-title>PRODUCTS</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="contBg">
+  <!-- <ion-card *ngFor="let Pro of MemberProducts">
+      <ion-item>
+      <div style="width:100%">
+          <div style="float:left; width:80%">
+              <h1> {{Pro.product_name}} </h1>                
+          </div>
+          <div style="width:auto; float:right">
+                <span  ion-button class="primary" (click)="viewProductDetails(Pro.id)">View Details</span>
+          </div>        
+      </div>
+    <div style="clear: both;">
+    </div>
+      <img style="width:300px !important; border-radius:2%;" src={{Pro.product_image}} [alt]="Pro.product_name" />
+    </ion-item>
+  </ion-card> -->
+ 
+  <ion-grid *ngIf="myProList">
+    <ion-row>
+      <ion-col *ngFor="let val of myProList">
+          <div class="cardDiv">
+            <!-- <div class="imgDiv" style="background-image: url("+{{val.product_image}}+")"> -->
+              <div class="imgDiv" [style.backgroundImage]="'url(' + val.product_image + ')'"  (click)="viewProductDetails(val.id)">
+               
+              </div>
+              <div class="grayText"><p>{{val.product_name}}</p></div>
+              <div class="blackText">
+                <div class="flex1">{{val.final_price}} RM</div>
+                <div class="flex2">
+                  <b><ion-icon name="heart-outline"></ion-icon> <ion-icon name="ios-cart-outline"></ion-icon></b>
+                  
+                </div>
+              </div>
+             </div>
+      </ion-col>
+   
+    </ion-row>
+  </ion-grid> 
 
 </ion-content>

@@ -5,13 +5,9 @@ import { HttpClient,HttpErrorResponse   } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { LoginPage } from '../login/login';
 import { LoadingProvider } from '../../providers/loading/loading';
-//import { HomePage } from '../home/home';
-/**
- * Generated class for the SignupPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
+
+
 
 @IonicPage()
 @Component({
@@ -19,7 +15,7 @@ import { LoadingProvider } from '../../providers/loading/loading';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-  
+  userExist = 1;
 url:string;
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
@@ -36,12 +32,8 @@ url:string;
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
-
-
- 
-
-    ifUserExist(userEmail) { 
-      var userExist = 1;    
+  
+  ifUserExist(userEmail){  
       this.url = 'http://aliinfotech.com/vdeovalet/ifUserExist/api';
         var headers = new Headers();
             headers.append('Content-Type', 'application/json');
@@ -50,35 +42,25 @@ url:string;
          .subscribe(res =>{                           
             console.log(res);
                   if(res = 0){
-                  return userExist = 0;
+                    this.userExist = 0;
                   }
          },        
          (err: HttpErrorResponse) => {
             if(err.status == 500){
               this.loading.presentToast('Error',15000,'top','failedToast');
-              return userExist = 1;
+              this.userExist = 1;
             
             }
-            
        });
-
-      
       }
-
-
-
-
-
-  signup(form: NgForm){     
-
-   
-
+  signup(form: NgForm){  
   var regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);              
       var headers = new Headers();
           headers.append('Content-Type', 'application/json');
 
       var data = form.value;      
       var email = regexp.test(data.useremail);
+      this.ifUserExist(data.useremail); 
 
       console.log(email);
 
@@ -98,7 +80,7 @@ url:string;
           return false;          
         }
 
-        if(this.ifUserExist(data.useremail)){
+        if(this.userExist){
           this.loading.presentToast('Email Already Exist',15000,'top','failedToast');
           return false;
         }
@@ -130,7 +112,8 @@ url:string;
     this.url ="http://aliinfotech.com/vdeovalet/signup/api"; 
      this.http.post(this.url,myPostObject,{
       headers: { 'Content-Type': 'application/json' }})
-        .subscribe(res => {          
+        .subscribe(res => {  
+          console.log(res);        
           this.loading.presentToast('Registered Successfully!.',15000,'top','successToast');              
             setTimeout(() =>{
                 this.navCtrl.push(LoginPage);                  

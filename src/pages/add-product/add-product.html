@@ -1,18 +1,60 @@
-<!--
-  Generated template for the AddProductPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>addProduct</ion-title>
+  <ion-navbar color="newOrange">
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
-
-</ion-content>
+  <form #AddProductForm="ngForm" (ngSubmit)="CreateProductWithImages(AddProductForm)" > 
+  <ion-label>Your Store: {{MemberStore?.store_name}}</ion-label>
+  <ion-item>
+  <ion-label class="lab" floating>Product Name</ion-label>
+  <ion-input block type="text" name="ProductName" [(ngModel)]="ProductNametxt"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label floating class="lab" >Product Category</ion-label>
+  <ion-select [(ngModel)]="ProductCategoryselect" name="ProductCategory">
+  <ion-option *ngFor="let pc of ProdcutCategory" value="{{pc.id}}">{{pc.category_name}}</ion-option> 
+  </ion-select>
+  </ion-item>
+  <ion-item>
+  <ion-label class="lab" floating>Product Short Desc</ion-label>
+  <ion-input block type="text" name="ShortDesc" [(ngModel)]="ProductShortDesc"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label class="lab" floating>Product Long Desc</ion-label>
+  <ion-textarea block type="text" name="LongDesc" [(ngModel)]="ProductLongDesc" rows="5" cols="50" ></ion-textarea>
+  </ion-item>
+  <ion-item>
+  <ion-label class="lab" floating>Orignal Price</ion-label>
+  <ion-input block type="text" name="OrignalPrice" [(ngModel)]="OrignalPrice"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label class="lab" floating>Discount Per</ion-label>
+  <ion-input block type="number" min="0" max="99" name="DiscountPer" [(ngModel)]="DiscountPer" (keyup)="calculatePrice($event,OrignalPrice)"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label class="lab" floating>Discount Amount</ion-label>
+  <ion-input block type="text" name="DiscountAmount" [value]="discountPrice" [(ngModel)]="DiscountAmount"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label class="lab" floating>Discount Final Price</ion-label>
+  <ion-input block type="text" name="FinalPrice" [value]="finalPrice" [(ngModel)]="DiscountFinalPrice"></ion-input>
+  </ion-item>
+  
+  <button type="button" class="Primary" ion-button (click)="presentActionSheet()"> Upload Product Image </button>
+  <img *ngIf="ProductImagePrimaryB64" style="float:left; width:150px" name="ProductImagePrimaryB64" [src]="ProductImagePrimaryB64" alt="produtcImage" />
+  <img *ngIf="ProductImagePrimary" style="float:left; width:150px" name="ProductImagePrimary" [src]="ProductImagePrimary" alt="produtcImage" />
+  <img *ngIf="OptionImage1" name="OptionImage1" [src]="pathForImage(ProductImagePrimary)" alt="OptionImage1" />
+  <img *ngIf="OptionImage2" name="OptionImage2" [src]="pathForImage(ProductImagePrimary)" alt="OptionImage2" />
+  <img *ngIf="OptionImage3" name="OptionImage3" [src]="pathForImage(ProductImagePrimary)" alt="OptionImage3" /> 
+  
+  <button type="submit" ion-button block color="primary">Add Product</button>
+  </form>
+  
+  
+  
+  </ion-content>

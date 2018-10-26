@@ -232,15 +232,17 @@
 
 
 
-      <div class="scrolling-wrapper">
-        <div class="card" (click)="product()">
+      <div *ngIf="proAtBottom" class="scrolling-wrapper">
+        <div class="card" (click)="product()" *ngFor="let val of proAtBottom">
           <div>
-            <div class="scrImg"><img src="../../assets/imgs/mob1.jpg " /></div>
-            <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
+            <div class="scrImg">
+              <img src={{val.product_image}} />
+            </div>
+            <div class="scrPr"><button color="light" ion-button rounded outline>RM {{val.final_price}}</button></div>
           </div>
         </div>
 
-        <div class="card" (click)="product()">
+        <!-- <div class="card" (click)="product()">
           <div>
             <div class="scrImg"><img src="../../assets/imgs/mob2.jpg " /></div>
             <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
@@ -301,7 +303,7 @@
             <div class="scrImg"><img src="../../assets/imgs/mob2.jpg " /></div>
             <div class="scrPr"><button color="light" ion-button rounded outline>RM 230.40</button></div>
           </div>
-        </div>
+        </div> -->
       </div>
 
     </div>

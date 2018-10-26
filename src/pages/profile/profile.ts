@@ -6,12 +6,7 @@ import { FollowingPage } from '../following/following';
 import { AddProductPage } from '../add-product/add-product';
 import { CartPage } from '../cart/cart';
 
-/**
- * Generated class for the ProfilePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -30,16 +25,7 @@ export class ProfilePage {
   logout(){
     localStorage.clear();
     this.navCtrl.setRoot(LiveChanelsPage);
-    // this.navCtrl.push(LiveChanelsPage);
   }
-
-  // myProducts(){
-  //   this.navCtrl.push(MyProductsPage);
-  // }
-
-  // liveEvents(){
-  //   this.navCtrl.push(LiveEventsPage);
-  // }
 
   addNewProduct(){
     this.navCtrl.push(AddProductPage);

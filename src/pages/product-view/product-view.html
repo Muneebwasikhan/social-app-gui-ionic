@@ -1,0 +1,88 @@
+<!--
+  Generated template for the ProductViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="newOrange">
+    <ion-title>PRODUCT</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<!--
+  Generated template for the ProductViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding>
+  <ion-slides>
+      <ion-slide>
+          <img src="{{ProductDescription?.product_image}}">
+      </ion-slide>
+      <ion-slide>
+          <img src="{{ProductDescription?.option_image_1}}">
+      </ion-slide>
+      <ion-slide>
+          <img src="{{ProductDescription?.option_image_2}}">
+      </ion-slide>
+      <ion-slide>
+          <img src="{{ProductDescription?.option_image_3}}">
+      </ion-slide>
+    </ion-slides>
+    <!-- <img src="{{ProductDescription.OptionImage1}}"> -->
+    <ion-fab right top>
+      <button ion-fab color="newOrange">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-fab>
+  
+    <ion-item>
+      <h1>{{ProductDescription?.product_name}}</h1>
+      <p>{{ProductDescription?.short_desc}}</p>
+      <h2>{{ProductDescription?.final_price}} RM</h2>
+      
+    </ion-item>
+    <p>{{ProductDescription?.desc}}Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+  
+    <!-- <ion-item>
+      <ion-icon name="wine" item-start large ></ion-icon>
+      <h2>Institute of Fine Cocktails</h2>
+      <p>14 S. Hop Avenue, Madison, WI 53703</p>
+    </ion-item>
+   -->
+    <!-- <ion-item>
+      <span item-start>18 min</span>
+      <span item-start>(2.6 mi)</span>
+      <button ion-button icon-start clear item-end>
+        <ion-icon name="navigate"></ion-icon>
+        Start
+      </button>
+    </ion-item> -->
+  
+<!--   
+<button ion-button class="primary" (click)="showAllProducts()" >Show All Products</button>
+
+{{ProductDescription.ProductName}},
+{{ProductDescription.NikeShoes}},
+
+{{ProductDescription.ProductImage}},
+{{ProductDescription.OptionImage1  }},
+{{ProductDescription.OptionImage2}},
+{{ProductDescription.OptionImage3}},
+{{ProductDescription.ShortDesc}},
+{{ProductDescription.OrignalPrice}},
+{{ProductDescription.DiscountPer}},
+{{ProductDescription.DiscountAmount}},
+{{ProductDescription.FinalPrice}},
+{{ProductDescription.StoreName}}, -->
+
+<button ion-button full (click)="addCart()" color="newOrange">ADD ITEM TO CART</button>
+<!-- <button ion-button full (click)="addCart2()" color="themeColor">ADD ITEM TO CART2</button> -->
+</ion-content>

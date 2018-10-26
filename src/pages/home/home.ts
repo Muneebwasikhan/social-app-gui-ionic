@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
-import { AboutPage } from '../about/about';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -39,7 +38,4 @@ disp = false;
     this.disp = false;
   }
 
-about(){
-this.navCtrl.push(AboutPage);
-}
 }

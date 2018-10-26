@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App, ViewController } from 'ionic-angular';
 import { VideoListPage } from '../video-list/video-list';
-import { TabsPage } from '../tabs/tabs';
 import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { LoginPage } from '../login/login';
@@ -9,6 +8,10 @@ import { IndexPopoverPage } from '../index-popover/index-popover';
 import { GoLivePage } from '../go-live/go-live';
 import { BroadcasterPage } from '../broadcaster/broadcaster';
 import { LoadingProvider } from '../../providers/loading/loading';
+import { HomePage } from '../home/home';
+import { LiveChanelsPage } from '../live-chanels/live-chanels';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { SelectProductPage } from '../select-product/select-product';
 
 /**
  * Generated class for the IndexPage page.
@@ -23,6 +26,10 @@ import { LoadingProvider } from '../../providers/loading/loading';
   templateUrl: 'index.html',
 })
 export class IndexPage {
+  url: any;
+  myId: any;
+  // allPro: any;
+  // allProList = [];
   searchEnable = false;
   obj=[
     {
@@ -55,17 +62,36 @@ export class IndexPage {
     },
   ]
   
- 
- 
+  
  
   constructor(public navCtrl: NavController, public navParams: NavParams
     , public appCtrl: App, public popoverCtrl: PopoverController,
-    public loading:LoadingProvider) {
+    public loading:LoadingProvider,
+    private http: HttpClient,) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LiveChanelsPage');
-
+    this.myId = localStorage.getItem('MemberId');
+    this.getStoreById(this.myId);
+    // this.getAllProducts();
+  }
+  getStoreById(MemberId) {
+    console.log("Called");
+    console.log(MemberId);
+    this.url = 'http://aliinfotech.com/vdeovalet/getStoreById/api';
+    this.http.post(this.url, { 'MemberId': MemberId }, {
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .subscribe(res => {
+            console.log(res);
+            localStorage.setItem('MemberStore',JSON.stringify(res));
+        },
+            (err: HttpErrorResponse) => {
+                if (err.status == 500) {
+                    alert("Interal Server Error.Try Again");
+                }
+            });
   }
   presentPopover(myEvent) {
     let popover = this.popoverCtrl.create(IndexPopoverPage);
@@ -108,8 +134,6 @@ export class IndexPage {
       });
     // this.navCtrl.push(VideoListPage);
   }
-
-
   eventList2(resp){
     this.loading.show('Loading...');
     console.log((resp*1)+1);
@@ -142,12 +166,9 @@ export class IndexPage {
             }
           });
         // this.navCtrl.push(VideoListPage);
-      }
-
-      
+  }
   testingButton() {
-    this.navCtrl.push(TabsPage);
-    // this.appCtrl.getRootNav().setRoot(TabsPage);
+    this.navCtrl.push(HomePage);
 
   }
   fetchRes() {
@@ -171,7 +192,25 @@ export class IndexPage {
     this.navCtrl.push(LoginPage);
   }
   goLive() {
-    this.navCtrl.push(BroadcasterPage);
+    this.navCtrl.push(SelectProductPage);
   }
+
+  // getMyProducts(){
+  //   this.allPro = "http://aliinfotech.com/vdeovalet/gapr/api";
+
+  //   this.http.post(this.allPro,{
+  //     headers: { 'Content-Type': 'application/json' }
+  //   })
+  //     .subscribe(res => {
+  //       console.log(res);
+  //       this.allProList = res;
+  //     },
+  //       (err: HttpErrorResponse) => {
+  //         if (err.status == 500) {
+  //           this.loading.hide();
+  //           this.loading.presentToast('TimeOut.', 1500, 'top');
+  //         }
+  //       });
+  // }
 
 }

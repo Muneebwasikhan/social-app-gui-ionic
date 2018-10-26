@@ -15,7 +15,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   templateUrl: 'forgot-password.html',
 })
 export class ForgotPasswordPage {
-  url:string;
+  url: string;
   formData = {
     email: '',
   };
@@ -27,26 +27,27 @@ export class ForgotPasswordPage {
     public http: HttpClient,
     public navParams: NavParams) {
   }
-  
 
 
-  forgetPassword() {     
+
+  forgetPassword() {
     this.url = 'http://aliinfotech.com/vdeovalet/forgetPassword/api';
-      var headers = new Headers();
-          headers.append('Content-Type', 'application/json');
-     this.http.post(this.url,this.formData,{
-      headers: { 'Content-Type': 'application/json' }})
-       .subscribe(res =>{                 
-        this.loading.presentToast('An email has been send it to you.',15000,'top','successToast');
-       },        
-       (err: HttpErrorResponse) => {
-          if(err.status == 500){
-            this.loading.presentToast('Error',15000,'top','failedToast');
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    this.http.post(this.url, this.formData, {
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .subscribe(res => {
+        this.loading.presentToast('An email has been send it to you.', 15000, 'top', 'successToast');
+      },
+        (err: HttpErrorResponse) => {
+          if (err.status == 500) {
+            this.loading.presentToast('Error', 15000, 'top', 'failedToast');
           }
-     });
-    }
+        });
+  }
 
-  
+
 
   dismiss() {
     this.viewCtrl.dismiss();

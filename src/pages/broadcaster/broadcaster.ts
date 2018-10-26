@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Platform, ToastController } from 'ionic-angular';
+import { HttpErrorResponse, HttpClient } from '@angular/common/http';
+import { LoadingProvider } from '../../providers/loading/loading';
 
 /**
  * Generated class for the BroadcasterPage page.
@@ -22,12 +24,17 @@ export class BroadcasterPage {
   errListenerId = false;
   showEye = true;
   logedin: boolean = false;
+  proAtBottom : any;
+  items: any;
   constructor(
     private toastCtrl: ToastController,
     public platform: Platform,
     public navCtrl: NavController, 
+    private http: HttpClient,
+    public loading: LoadingProvider,
     public navParams: NavParams) {
-
+ this.items = this.navParams.data;
+//  console.log(this.items);
     platform.ready().then(() => {
       // Using array syntax workaround, since types are not declared.
       if (window['bambuser']) {
@@ -37,6 +44,26 @@ export class BroadcasterPage {
         // Cordova plugin not installed or running in a web browser
       }
     });
+  }
+
+  getProducts(){
+    
+
+    var url = "http://aliinfotech.com/vdeovalet/get/pro-by-ids/api";
+console.log( JSON.stringify({productList: this.items}));
+    this.http.post(url, {productList: this.items}, {
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .subscribe(res => {
+        console.log(res);
+        this.proAtBottom = res;
+      },
+        (err: HttpErrorResponse) => {
+          if (err.status == 500) {
+            this.loading.hide();
+            this.loading.presentToast('Please Try Again!.', 1500, 'top');
+          }
+        });
   }
   chkLogin(){
     if(localStorage.getItem("Member") == "yes"){
@@ -48,8 +75,8 @@ export class BroadcasterPage {
   }
   ionViewDidLoad(){
     this.chkLogin();
+    this.getProducts();
   }
-
   async ionViewDidEnter() {
     if (APPLICATION_ID === 'change') {
       await new Promise(resolve => setTimeout(resolve, 500)); // Let page animations to finish before using alert()
@@ -68,7 +95,6 @@ export class BroadcasterPage {
     console.log('Starting viewfinder');
     this.broadcaster.showViewfinderBehindWebView();
   }
-
   ionViewWillLeave() {
     // Disengage our Ionic CSS background overrides, to ensure the rest of the app looks ok.
     document.getElementsByTagName('body')[0].classList.remove("show-viewfinder");
@@ -78,7 +104,6 @@ export class BroadcasterPage {
       this.broadcaster.hideViewfinder();
     }
   }
-
   async start() {
     if (this.isBroadcasting || this.isPending) return;
     this.isPending = true;
@@ -104,7 +129,6 @@ export class BroadcasterPage {
       console.log(e);
     }
   }
-
   async stop() {
     if (!this.isBroadcasting || this.isPending) return;
     this.isPending = true;

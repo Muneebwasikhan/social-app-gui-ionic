@@ -2,20 +2,12 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { OurVisionPage } from '../pages/our-vision/our-vision';
-import { BuildingAppPage } from '../pages/building-app/building-app';
-import { AppInfoPage } from '../pages/app-info/app-info';
 import { LiveChanelsPage } from '../pages/live-chanels/live-chanels';
 import { VideoListPage } from '../pages/video-list/video-list';
 import { PopoverPage } from '../pages/popover/popover';
-import { LiveDemoPage } from '../pages/live-demo/live-demo';
-import { DemoPageVideoPage } from '../pages/demo-page-video/demo-page-video';
 import { ProductDetailsPage } from '../pages/product-details/product-details';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
@@ -51,9 +43,12 @@ import { CartPage } from '../pages/cart/cart';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BasicPlayerPage } from '../pages/basic-player/basic-player';
-import { LoginModalPage } from '../pages/login-modal/login-modal';
 import { LocalNotifications } from '@ionic-native/local-notifications';
-// import { TranslateProvider } from '../providers/translate/translate';
+import { StoreProvider } from '../providers/store/store';
+import { SetStoreInfoPage } from '../pages/set-store-info/set-store-info';
+import { ProductViewPage } from '../pages/product-view/product-view';
+import { WheelSelector } from '@ionic-native/wheel-selector';
+import { SelectProductPage } from '../pages/select-product/select-product';
 
 
 
@@ -62,19 +57,11 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage,
-    OurVisionPage,
-    BuildingAppPage,
-    AppInfoPage,
     LiveChanelsPage,
     VideoListPage,
     PopoverPage,
     IndexPopoverPage,
-    LiveDemoPage,
-    DemoPageVideoPage,
     ProductDetailsPage,
     LoginPage,
     SignupPage,
@@ -96,7 +83,9 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     BroadcasterPage,
     CartPage,
     BasicPlayerPage,
-    LoginModalPage
+    SetStoreInfoPage,
+    ProductViewPage,
+    SelectProductPage
   ],
   imports: [
    
@@ -121,19 +110,11 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage,
-    OurVisionPage,
-    BuildingAppPage,
-    AppInfoPage,
     LiveChanelsPage,
     VideoListPage,
-    LiveDemoPage,
     PopoverPage,
     IndexPopoverPage,
-    DemoPageVideoPage,
     ProductDetailsPage,
     LoginPage,
     SignupPage,
@@ -155,7 +136,9 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     BroadcasterPage,
     CartPage,
     BasicPlayerPage,
-    LoginModalPage
+    SetStoreInfoPage,
+    ProductViewPage,
+    SelectProductPage
   ],
   providers: [
     StatusBar,
@@ -177,7 +160,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     AlertProvider,
     CameraProvider,
     LoadingProvider,
-    // WheelSelector,
+    StoreProvider,
+    WheelSelector,
   ]
 })
 export class AppModule {}

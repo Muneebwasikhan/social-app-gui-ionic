@@ -1,0 +1,59 @@
+<!--
+  Generated template for the SetStoreInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="newOrange">
+      <ion-buttons left>
+          <button ion-button icon-only (click)="close()">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title>SET STORE INFO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #AddProductForm="ngForm" (ngSubmit)="CreateProductWithImages(AddProductForm)">
+    
+    
+    <ion-item>
+      <ion-label class="lab" floating>Store Name</ion-label>
+      <ion-input block type="text" name="store_name" [(ngModel)]="store_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="lab" floating>Store Location</ion-label>
+      <ion-input block type="text" name="store_location" [(ngModel)]="store_location"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label class="lab" floating>Category</ion-label>
+      <ion-input block type="text" name="category" [(ngModel)]="category"></ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label class="lab" floating>Category</ion-label>
+      <ion-select name="category" [(ngModel)]="category">
+        <ion-option *ngFor="let val of catList" value={{val.id}}>{{val.store_cat_name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label class="lab" floating>Store logo</ion-label>
+      <ion-input block type="text" name="store_logo_pic" [(ngModel)]="store_logo_pic"></ion-input>
+    </ion-item> -->
+
+     <button type="button" class="Primary" ion-button color="newOrange" (click)="presentActionSheet()"> Upload Product Image </button>
+    <img *ngIf="ProductImagePrimaryB64" style="float:left; width:150px" name="ProductImagePrimaryB64" [src]="ProductImagePrimaryB64"
+      alt="produtcImage" />
+    <img *ngIf="ProductImagePrimary" style="float:left; width:150px" name="ProductImagePrimary" [src]="ProductImagePrimary"
+      alt="produtcImage" />
+    <!-- <img *ngIf="OptionImage1" name="OptionImage1" [src]="pathForImage(ProductImagePrimary)" alt="OptionImage1" /> -->
+    <!--<img *ngIf="OptionImage2" name="OptionImage2" [src]="pathForImage(ProductImagePrimary)" alt="OptionImage2" />
+    <img *ngIf="OptionImage3" name="OptionImage3" [src]="pathForImage(ProductImagePrimary)" alt="OptionImage3" />-->
+
+    <button type="submit" ion-button block color="newOrange">Add</button> 
+  </form>
+  
+</ion-content>

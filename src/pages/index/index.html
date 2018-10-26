@@ -1,16 +1,9 @@
-<!--
-  Generated template for the LiveChanelsPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+
 <ion-header>
   <ion-navbar color="white">
 
     <ion-title>
-      <!-- VDEOVALET -->
-      <!-- tabs page -->
-      <!-- <img src="./../../assets/imgs/logo3.png" style="height: 30px;"/> -->
       <button ion-button  full color="newOrange" [disabled]="abc" (click)="goLive()" >GO LIVE</button>
     </ion-title>
 
@@ -44,13 +37,137 @@
       <ion-icon name="log-in"></ion-icon>
     </button>
   </ion-fab>
+<!-- 
+  <ion-grid *ngIf="allProList">
+    <ion-row>
+      <ion-col *ngFor="let val of allProList">
+          <div class="cardDiv">
+              <div class="imgDiv" style="background-image: url(https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png)">
+        
+              </div>
+              <div class="grayText"><p>Having best product ever</p></div>
+              <div class="blackText">
+                <div class="flex1">150 RM</div>
+                <div class="flex2">
+                  <b><ion-icon name="heart-outline"></ion-icon> <ion-icon name="ios-cart-outline"></ion-icon></b>
+                  
+                </div>
+              </div>
+             </div>
+      </ion-col>
+       <ion-col>
+          <div class="cardDiv">
+              <div class="imgDiv" style="background-image: url(https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png)">
+        
+              </div>
+              <div class="grayText"><p>Having best product ever</p></div>
+              <div class="blackText">
+                <div class="flex1">150 RM</div>
+                <div class="flex2">
+                  <b><ion-icon name="heart-outline"></ion-icon> <ion-icon name="ios-cart-outline"></ion-icon></b>
+                  
+                </div>
+              </div>
+             </div>
+      </ion-col>
+      <ion-col>
+          <div class="cardDiv">
+              <div class="imgDiv" style="background-image: url(https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png)">
+        
+              </div>
+              <div class="grayText"><p>Having best product ever</p></div>
+              <div class="blackText">
+                <div class="flex1">150 RM</div>
+                <div class="flex2">
+                  <b><ion-icon name="heart-outline"></ion-icon> <ion-icon name="ios-cart-outline"></ion-icon></b>
+                  
+                </div>
+              </div>
+             </div>
+      </ion-col>
+      <ion-col>
+          <div class="cardDiv">
+              <div class="imgDiv" style="background-image: url(https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png)">
+        
+              </div>
+              <div class="grayText"><p>Having best product ever</p></div>
+              <div class="blackText">
+                <div class="flex1">150 RM</div>
+                <div class="flex2">
+                  <b><ion-icon name="heart-outline"></ion-icon> <ion-icon name="ios-cart-outline"></ion-icon></b>
+                  
+                </div>
+              </div>
+             </div>
+      </ion-col>
+      <ion-col>
+          <div class="cardDiv">
+              <div class="imgDiv" style="background-image: url(https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png)">
+        
+              </div>
+              <div class="grayText"><p>Having best product ever</p></div>
+              <div class="blackText">
+                <div class="flex1">150 RM</div>
+                <div class="flex2">
+                  <b><ion-icon name="heart-outline"></ion-icon> <ion-icon name="ios-cart-outline"></ion-icon></b>
+                  
+                </div>
+              </div>
+             </div>
+      </ion-col>
+      <ion-col>
+          <div class="cardDiv">
+              <div class="imgDiv" style="background-image: url(https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png)">
+        
+              </div>
+              <div class="grayText"><p>Having best product ever</p></div>
+              <div class="blackText">
+                <div class="flex1">150 RM</div>
+                <div class="flex2">
+                  <b><ion-icon name="heart-outline"></ion-icon> <ion-icon name="ios-cart-outline"></ion-icon></b>
+                  
+                </div>
+              </div>
+             </div>
+      </ion-col>
+      <ion-col>
+          <div class="cardDiv">
+              <div class="imgDiv" style="background-image: url(https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png)">
+        
+              </div>
+              <div class="grayText"><p>Having best product ever</p></div>
+              <div class="blackText">
+                <div class="flex1">150 RM</div>
+                <div class="flex2">
+                  <b><ion-icon name="heart-outline"></ion-icon> <ion-icon name="ios-cart-outline"></ion-icon></b>
+                  
+                </div>
+              </div>
+             </div>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid> -->
 
-  <!-- <div *ngIf="searchEnable == true" style="width: 100%;height: 45px;"></div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <ion-card *ngFor="let val of obj;let i = index" style="width: 100vw;margin-left: -0px;">
     <img [src]="val.imgSrc" />
-    <!-- <img src="https://i.pinimg.com/originals/c6/a2/89/c6a289648d689ebf779f5c11b2699ab5.jpg"/> -->
-    <div class="halfBlack"></div>
+     <div class="halfBlack"></div>
     <div class="cont">
       <div class="main">
         <div class="main1">
@@ -121,8 +238,7 @@
   
   <ion-card *ngFor="let val of obj2;let i = index" style="width: 100vw;margin-left: -0px;">
       <img [src]="val.imgSrc" />
-      <!-- <img src="https://i.pinimg.com/originals/c6/a2/89/c6a289648d689ebf779f5c11b2699ab5.jpg"/> -->
-      <div class="halfBlack"></div>
+       <div class="halfBlack"></div>
       <div class="cont">
         <div class="main">
           <div class="main1">
@@ -190,6 +306,4 @@
         </div>
       </div>
     </ion-card>
-
-
 </ion-content>

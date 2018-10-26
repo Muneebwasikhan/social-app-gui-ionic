@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App, ViewController } from 'ionic-angular';
 import { VideoListPage } from '../video-list/video-list';
-import { TabsPage } from '../tabs/tabs';
 import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { LoginPage } from '../login/login';
 import { IndexPage } from '../index';
 import { LoadingProvider } from '../../providers/loading/loading';
+import { HomePage } from '../home/home';
 
 
 
@@ -150,7 +150,7 @@ console.log((resp*1)+1);
     // this.navCtrl.push(VideoListPage);
   }
   testingButton(){
-    this.appCtrl.getRootNav().setRoot(TabsPage);
+    this.appCtrl.getRootNav().setRoot(HomePage);
     // this.appCtrl.getRootNav().setRoot(TabsPage);
 
   }

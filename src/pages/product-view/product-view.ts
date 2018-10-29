@@ -5,6 +5,7 @@ import { Slides } from 'ionic-angular';
 import { WheelSelector } from '@ionic-native/wheel-selector';
 import { LoadingProvider } from '../../providers/loading/loading';
 import { IndexPage } from '../index';
+import { CartPage } from '../cart/cart';
 
 /**
  * Generated class for the ProductViewPage page.
@@ -42,7 +43,9 @@ export class ProductViewPage {
   showAllProducts(){
     this.navCtrl.push(IndexPage);
   }
-
+  cartPage(){
+    this.navCtrl.push(CartPage);
+  }
 
   addCart(){
     console.log(this.ProductDescription);

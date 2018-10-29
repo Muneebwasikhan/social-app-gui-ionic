@@ -67,7 +67,7 @@ export class IndexPage {
   constructor(public navCtrl: NavController, public navParams: NavParams
     , public appCtrl: App, public popoverCtrl: PopoverController,
     public loading:LoadingProvider,
-    private http: HttpClient,) {
+    private http: HttpClient) {
   }
 
   ionViewDidLoad() {
@@ -192,7 +192,15 @@ export class IndexPage {
     this.navCtrl.push(LoginPage);
   }
   goLive() {
-    this.navCtrl.push(SelectProductPage);
+    var st = JSON.parse(localStorage.getItem('MemberStore'));
+    if(st.is_active == 0){
+
+      this.loading.presentToast('Please Enable Your Store First', 2000, 'top', 'failedToast');
+    }
+    else if(st.is_active == 1){
+      this.navCtrl.push(SelectProductPage);
+    }
+    
   }
 
   // getMyProducts(){

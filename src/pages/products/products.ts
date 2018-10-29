@@ -30,6 +30,9 @@ import { LiveChanelsPage } from '../live-chanels/live-chanels';
   templateUrl: 'products.html',
 })
 export class ProductsPage {
+  myFavs;
+  hearted: boolean = false;
+  carted: boolean = false;
   myId: any;
   myProList: any;
   myProApi: any;
@@ -46,14 +49,25 @@ export class ProductsPage {
     ) {
       this.myId =+ localStorage.getItem('MemberId');
       console.log(this.myId);
+
       // this.getAllProdcutsByMemberId(this.MemberId);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyProductsPage');
+    this.getFavoriteProducts();
     this.getMyProducts();
   }
-
+  chkFav(res){
+    
+    var chk = this.myFavs.indexOf(res);
+    if(chk == -1){
+      return false;
+    }
+    else if(chk >= 0){
+      return true;
+    }
+  }
   viewProductDetails(ProductId){
     //var ViewProuctDetails = questions.find(x => x.id === id);
      var ViewProuctDetails = this.myProList.find( val => val.id === ProductId );
@@ -62,6 +76,26 @@ export class ProductsPage {
      this.navCtrl.push(ProductViewPage,ViewProuctDetails); 
    }
 
+   heart(res){
+    var url = 'http://aliinfotech.com/vdeovalet/favorite/product/api';  
+    this.http.post(url,{'user_id':this.myId,'product_id':res},{
+      headers: { 'Content-Type': 'application/json' }})
+        .subscribe(res => {      
+          console.log(res);
+          this.getFavoriteProducts();
+        },        
+        (err: HttpErrorResponse) => {
+          if(err.status == 500){
+            console.log(err);
+            alert("Interal Server Error.Try Again");
+          }
+      });
+     console.log('heart');
+   }
+   cart(){
+    console.log('cart');
+    this.carted = !this.carted;
+  }
    
    
   //  getAllProdcutsByMemberId(MemberId){    
@@ -80,6 +114,21 @@ export class ProductsPage {
   //          }
   //      });
   //  }
+   getFavoriteProducts(){  
+     var url = 'http://aliinfotech.com/vdeovalet/user/favorites/api';  
+     this.http.post(url,{'user_id':this.myId},{
+       headers: { 'Content-Type': 'application/json' }})
+         .subscribe(res => {      
+           console.log(res);
+           this.myFavs = res;
+         },        
+         (err: HttpErrorResponse) => {
+           if(err.status == 500){
+             console.log(err);
+             alert("Interal Server Error.Try Again");
+           }
+       });
+   }
 
    getMyProducts(){
     this.myProApi = "http://aliinfotech.com/vdeovalet/getAllProdcutsByMemberId/api";

@@ -38,8 +38,9 @@
               <div class="blackText">
                 <div class="flex1">{{val.final_price}} RM</div>
                 <div class="flex2">
-                  <b><ion-icon name="heart-outline"></ion-icon> <ion-icon name="ios-cart-outline"></ion-icon></b>
-                  
+                    <b><ion-icon *ngIf="cart" (click)="cart()" name="ios-cart-outline"></ion-icon><ion-icon *ngIf="!cart" (click)="cart()" name="md-cart"></ion-icon></b>
+                  <b><ion-icon *ngIf="!chkFav(val.id)" (click)="heart(val.id)" name="heart-outline"></ion-icon><ion-icon *ngIf="chkFav(val.id)" (click)="heart(val.id)" name="heart"></ion-icon></b>
+                   
                 </div>
               </div>
              </div>
